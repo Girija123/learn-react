@@ -12,11 +12,7 @@ class Home extends React.Component {
   render(){
     return(
         <div className="App">
-         <Header />
-         {/*<Showcase />
-         <About />
-         <Contact />
-         <Footer /> */}
+         <Header/>
         </div>
     )
   }

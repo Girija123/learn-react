@@ -1,15 +1,18 @@
 import React from 'react'
-import styles from '../Header/header.css'
+import Styles from './header.module.css'
 
 export default class HeaderComp extends React.Component {
     render()
     {
         return(
-            <div className ={styles.header} >
-                <ul>
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Contact</a></li>
+            <div className ={Styles.header} >
+                <div className={Styles.titleAlign}>
+                <h2 >START BOOTSTRAP</h2>
+                </div>
+                <ul className={Styles.menuAlign}>
+                    <li><a>PORTFOLIO</a></li>
+                    <li><a>ABOUT</a></li>
+                    <li><a>CONTACT</a></li>
                 </ul>
             </div>
         )
