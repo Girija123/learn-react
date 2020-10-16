@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import About from '../src/About/about'
+import Contact from '../src/Contact/contact'
+import Footer from '../src/Footer/footer'
+import Header from '../src/Header/header'
+import Showcase from '../src/Showcase/showcase.js'
 
 
-serviceWorker.unregister();
+class Home extends React.Component {
+
+  render(){
+    return(
+        <div className="App">
+         <Header />
+         {/*<Showcase />
+         <About />
+         <Contact />
+         <Footer /> */}
+        </div>
+    )
+  }
+
+}
+
+ReactDOM.render (
+  <Home />, document.getElementById('root')
+)
