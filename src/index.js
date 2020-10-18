@@ -1,10 +1,9 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 
 
-/*class Search extends React.Component {
+class Search extends React.Component {
 
 
 
@@ -51,7 +50,7 @@ class ReturnSearch extends React.Component {
 render(
   <Search />, document.getElementById('root')
 
-)*/
+)
 
 let sortOptions=["HighToLow","LowToHigh"]
 
@@ -109,3 +108,4 @@ class DisplaySortResult extends React.Component{
 ReactDOM.render(
   <SortBy sort={sortOptions}/>,document.getElementById('root')
 )
+
