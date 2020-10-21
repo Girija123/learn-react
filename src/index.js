@@ -1,15 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import $ from "jquery";
+import "jquery-ui-bundle";
+import "jquery-ui-bundle/jquery-ui.css"
+
+
+let sizes = [{ "kidsSize": "2-3", "menSize": "XXL", "womenSize": "XS" }]
+
+class Accordion extends React.Component {
+
+  componentDidMount() {
+    $('#accordion').accordion()
+  }
+
+
+  render() {
+    let { displaySizes } = this.props
+    return (
+
+      <div id='accordion'>
+
+        <Sizes displaySizes={displaySizes} />
+
+      </div>
+
+    )
+  }
+}
+
+class Sizes extends React.Component {
+  render() {
+    let { displaySizes } = this.props
+    return (
+      Object.keys(displaySizes).forEach(function (key) {
+        <div>
+          <h3>{key}</h3>
+          <div>{displaySizes[key]}</div>
+        </div>
+      })
+
+    )
+
+  }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-
-serviceWorker.unregister();
+  <Accordion displaySizes={sizes} />, document.getElementById('root')
+)
