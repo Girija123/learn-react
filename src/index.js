@@ -5,7 +5,8 @@ import "jquery-ui-bundle";
 import "jquery-ui-bundle/jquery-ui.css"
 
 
-let sizes = [{ "kidsSize": "2-3", "menSize": "XXL", "womenSize": "XS" }]
+
+let sizes = { kidsSize: "2-3", menSize: "XXL", womenSize: "XS" }
 
 class Accordion extends React.Component {
 
@@ -31,18 +32,24 @@ class Accordion extends React.Component {
 class Sizes extends React.Component {
   render() {
     let { displaySizes } = this.props
+
     return (
-      Object.keys(displaySizes).forEach(function (key) {
-        <div>
-          <h3>{key}</h3>
-          <div>{displaySizes[key]}</div>
-        </div>
-      })
+      <div>
+        {Object.keys(displaySizes).forEach(key => {
+          console.log(key)
+          console.log(displaySizes)
+          return <div>
+            <h3>{key}</h3>
+            <div>{displaySizes[key]}</div>
+          </div>
 
+        })
+        }
+      </div>
     )
-
   }
 }
+
 
 ReactDOM.render(
   <Accordion displaySizes={sizes} />, document.getElementById('root')
